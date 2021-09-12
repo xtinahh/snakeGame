@@ -1,6 +1,6 @@
 package model;
 
-public class gameObject {
+public class GameObject {
     protected int x_Coor;
     protected int MIN_X = 0;
     protected int MAX_X = 0;

@@ -1,7 +1,7 @@
 package model;
 
 // Represents food with expiry time, nutritional value, and coordinates in x and y direction
-public class food extends gameObject {
+public class Food extends GameObject {
     private int expiry;
     private int DEF_EXP = 10;
 
@@ -14,7 +14,7 @@ public class food extends gameObject {
 
     // Code to generate random int references https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
     // EFFECTS: creates a new food with default expiry, random value, and random x and y coordinates
-    public food() {
+    public Food() {
         int rangeVal = (MAX_VAL - MIN_VAL + 1);
         int rangeX = (MAX_X - MIN_X + 1);
         int rangeY = (MAX_Y - MIN_Y + 1);
