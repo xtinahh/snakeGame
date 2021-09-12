@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Represent a snake with its length increasing as it consumes food
-public class Snake extends GameObject {
+public class Snake {
     private Section head;
     private List<Section> body;
     private String direction;
 
-    // EFFECTS: creates a snake with a head
+    // EFFECTS: creates a snake with a head with 0 body moving in the DOWN direction
     public Snake() {
         // TODO: assign head to snake while considering the position of head
         body = new ArrayList<Section>();

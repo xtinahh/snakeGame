@@ -1,7 +1,7 @@
 package model;
 
 // Represents food with expiry time, nutritional value, and coordinates in x and y direction
-public class Food extends GameObject {
+public class Food {
     private int expiry;
     private int DEF_EXP = 10;
 
@@ -20,8 +20,8 @@ public class Food extends GameObject {
     public Food() {
         expiry = DEF_EXP;
         nutrition = getRandomNut();
-        x_Coor = getRandomX();
-        y_Coor = getRandomY();
+//        x_Coor = getRandomX();
+//        y_Coor = getRandomY();
     }
 
     // EFFECTS: helper method to get a random value for nutrition
@@ -30,16 +30,16 @@ public class Food extends GameObject {
         return (int)Math.floor(Math.random() * rangeNut + MIN_NUT);
     }
 
-    // EFFECTS: helper method to get a random value for x coordinate
-    private int getRandomX() {
-        int rangeX = (MAX_X - MIN_X + 1);
-        return (int)Math.floor(Math.random() * rangeX + MIN_X);
-    }
-
-    // EFFECTS: helper method to get a random value for y coordinate
-    private int getRandomY() {
-        int rangeY = (MAX_Y - MIN_Y + 1);
-        return (int)Math.floor(Math.random() * rangeY + MIN_Y);
-    }
+//    // EFFECTS: helper method to get a random value for x coordinate
+//    private int getRandomX() {
+//        int rangeX = (MAX_X - MIN_X + 1);
+//        return (int)Math.floor(Math.random() * rangeX + MIN_X);
+//    }
+//
+//    // EFFECTS: helper method to get a random value for y coordinate
+//    private int getRandomY() {
+//        int rangeY = (MAX_Y - MIN_Y + 1);
+//        return (int)Math.floor(Math.random() * rangeY + MIN_Y);
+//    }
 
 }
