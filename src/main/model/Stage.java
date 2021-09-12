@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Represents the stage where game events take place
-public class Stage extends GameObject {
+public class Stage {
     private Snake snake;
     private List<Food> foodList;
 

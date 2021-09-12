@@ -6,4 +6,9 @@ public class Section {
     private int column;
     private int row;
 
+    // EFFECTS: creates a section at the given position
+    public Section(int col, int row) {
+        this.column = col;
+        this.row = row;
+    }
 }
