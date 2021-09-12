@@ -3,10 +3,10 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-// Represent a snake with its length increasing as it consumes food
+// Represent a snake with its length increasing as it consumes food moving at a default speed
 public class Snake extends GameObject {
-    private int x_Coor;
-    protected int y_Coor;
+    private int x_Pos;
+    protected int y_Pos;
     private int SPEED;
     private List<Body> length;
 
@@ -14,8 +14,20 @@ public class Snake extends GameObject {
     public Snake() {
         length = new ArrayList<Body>();
         length.add(new Body());
-        x_Coor = MAX_X / 2;
-        y_Coor = MAX_Y / 2;
+        x_Pos = MAX_X / 2;
+        y_Pos = MAX_Y / 2;
+    }
+
+    public int getLength() {
+        return length.size();
+    }
+
+    public int getX_Pos() {
+        return x_Pos;
+    }
+
+    public int getY_Pos() {
+        return y_Pos;
     }
 
     // MODIFIES: this
@@ -27,8 +39,16 @@ public class Snake extends GameObject {
     // MODIFIES: this
     // EFFECTS: reduces the length of the snake by one
     public void shrink() {
-        // TODO: consider scenario where there is only one length left
+        // TODO: consider scenarios where there is only one length left
         length.remove(0);
     }
+
+    // EFFECTS: produces true if snake crossed the boundary
+    public Boolean crossedBoundary() {
+        // TODO: consider scenarios where snake is moving along the boundary
+        return ((x_Pos == MIN_X) || (x_Pos == MAX_X) ||
+                (y_Pos == MIN_Y) || (y_Pos == MAX_Y));
+    }
+
 
 }
