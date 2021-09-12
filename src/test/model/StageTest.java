@@ -1,5 +1,7 @@
 package model;
 
-public class StageTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class StageTest {
 
 }

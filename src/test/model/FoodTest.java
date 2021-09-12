@@ -1,5 +1,12 @@
 package model;
 
-public class FoodTest {
+import org.junit.jupiter.api.Test;
+
+class FoodTest {
+
+    @Test
+    void testFood() {
+
+    }
 
 }

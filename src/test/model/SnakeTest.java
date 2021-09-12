@@ -1,5 +1,7 @@
 package model;
 
-public class SnakeTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class SnakeTest {
 
 }
