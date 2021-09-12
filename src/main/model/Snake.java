@@ -11,13 +11,14 @@ public class Snake extends GameObject {
 
     // EFFECTS: creates a snake with a head
     public Snake() {
+        // TODO: assign head to snake while considering the position of head
         body = new ArrayList<Section>();
-        body.add(new Section());
+        direction = "DOWN";
     }
 
     // EFFECTS: returns the length of snake (head and body)
     public int getLength() {
-        return body.size();
+        return 1 + body.size();
     }
 
     // EFFECTS: returns direction of snake
@@ -57,6 +58,5 @@ public class Snake extends GameObject {
 //                (y_Pos == MIN_Y) || (y_Pos == MAX_Y));
         return false;
     }
-
 
 }
