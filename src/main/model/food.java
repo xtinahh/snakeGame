@@ -8,7 +8,7 @@ public class food extends gameObject {
     private int minVal = 1;
 
 
-    // Codes to generate random int references https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
+    // Code to generate random int references https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
     // EFFECTS: creates a new food with default expiry, random value, and random x and y coordinates
     public food() {
         int rangeVal = (maxVal - minVal + 1);
