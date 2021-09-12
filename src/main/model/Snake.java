@@ -8,6 +8,7 @@ public class Snake extends GameObject {
     private int x_Pos;
     protected int y_Pos;
     private int SPEED;
+    private Body head;
     private List<Body> length;
 
     // EFFECTS: creates a snake with one length in the middle of the stage
@@ -34,6 +35,18 @@ public class Snake extends GameObject {
     // EFFECTS: increases the length of the snake by one
     public void grow() {
         length.add(new Body());
+    }
+
+    // MODIFIES: this
+    // EFFECTS: changes direction of snake 90 degrees to the right
+    public void rotateRight() {
+
+    }
+
+    // MODIFIES: this
+    // EFFECTS: changes direction of snake 90 degrees to the left
+    public void rotateLeft() {
+
     }
 
 //    // MODIFIES: this
