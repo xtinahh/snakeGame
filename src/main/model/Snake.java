@@ -36,12 +36,12 @@ public class Snake extends GameObject {
         length.add(new Body());
     }
 
-    // MODIFIES: this
-    // EFFECTS: reduces the length of the snake by one
-    public void shrink() {
-        // TODO: consider scenarios where there is only one length left
-        length.remove(0);
-    }
+//    // MODIFIES: this
+//    // EFFECTS: reduces the length of the snake by one
+//    public void shrink() {
+//        // consider scenarios where there is only one length left
+//        length.remove(0);
+//    }
 
     // EFFECTS: produces true if snake crossed the boundary
     public Boolean crossedBoundary() {

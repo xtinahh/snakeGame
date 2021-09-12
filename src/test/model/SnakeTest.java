@@ -24,4 +24,8 @@ class SnakeTest {
         assertEquals(2, snake.getLength());
     }
 
+//    @Test
+//    void testShrink() {
+//    }
+
 }
