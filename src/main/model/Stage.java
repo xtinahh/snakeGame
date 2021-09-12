@@ -10,7 +10,7 @@ public class Stage {
 
     // EFFECTS: creates a new stage with a snake and empty foodList
     public Stage() {
-        snake = new Snake( new Section(STAGE_COLS/2, STAGE_ROWS/2));
+        snake = new Snake(new Section(STAGE_COLS/2, STAGE_ROWS/2));
         food = new Food();
     }
 
