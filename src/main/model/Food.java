@@ -9,6 +9,9 @@ public class Food extends GameObject {
     private int MIN_VAL = 1;
     private int MAX_VAL = 3;
 
+    private int x_Coor;
+    protected int y_Coor;
+
     private String colour;
 
 

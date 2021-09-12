@@ -5,13 +5,17 @@ import java.util.List;
 
 // Represent a snake with its length increasing as it consumes food
 public class Snake extends GameObject {
+    private int x_Coor;
+    protected int y_Coor;
     private int SPEED;
     private List<Body> length;
 
-    // EFFECTS: creates a snake with one length
+    // EFFECTS: creates a snake with one length in the middle of the stage
     public Snake() {
         length = new ArrayList<Body>();
         length.add(new Body());
+        x_Coor = MAX_X / 2;
+        y_Coor = MAX_Y / 2;
     }
 
     // MODIFIES: this
