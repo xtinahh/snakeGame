@@ -1,4 +1,4 @@
 package model;
 
-public class snake {
+public class snake extends gameObject{
 }
