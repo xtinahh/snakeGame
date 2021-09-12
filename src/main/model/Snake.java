@@ -10,8 +10,8 @@ public class Snake {
     private String direction;
 
     // EFFECTS: creates a snake with a head with 0 body moving in the DOWN direction
-    public Snake(Section section) {
-        head = section;
+    public Snake(Section position) {
+        head = position;
         body = new ArrayList<Section>();
         direction = "DOWN";
     }
