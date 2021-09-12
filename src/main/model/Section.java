@@ -11,4 +11,14 @@ public class Section {
         this.column = col;
         this.row = row;
     }
+
+    // EFFECTS: returns column of this section
+    public int getColumn() {
+        return column;
+    }
+
+    // EFFECTS: returns row of this section
+    public int getRow() {
+        return row;
+    }
 }
