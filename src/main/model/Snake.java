@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 // Represent a snake with its length increasing as it consumes food
 public class Snake extends GameObject {
