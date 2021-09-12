@@ -20,7 +20,8 @@ class SnakeTest {
 
     @Test
     void testGrow() {
-
+        snake.grow();
+        assertEquals(2, snake.getLength());
     }
 
 }
