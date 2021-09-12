@@ -14,9 +14,9 @@ public class SnakeGame {
         // TODO: created food in random place
     }
 
-    // EFFECTS: returns food in a random location other than where the snake is
-    public Food createFood() {
-        // TODO
-    }
+//    // EFFECTS: returns food in a random location other than where the snake is
+//    public Food createFood() {
+//        // TODO
+//    }
 
 }
