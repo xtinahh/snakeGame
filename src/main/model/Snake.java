@@ -13,4 +13,18 @@ public class Snake extends GameObject {
         length = new ArrayList<Body>();
         length.add(new Body());
     }
+
+    // MODIFIES: this
+    // EFFECTS: increases the length of the snake by one
+    public void grow() {
+        length.add(new Body());
+    }
+
+    // MODIFIES: this
+    // EFFECTS: reduces the length of the snake by one
+    public void shrink() {
+        // TODO: consider scenario where there is only one length left
+        length.remove(0);
+    }
+
 }
