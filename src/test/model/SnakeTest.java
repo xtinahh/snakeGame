@@ -18,6 +18,30 @@ class SnakeTest {
     @Test
     void testSnakeConstructor() {
         assertEquals(1, snake.getLength());
+        assertEquals("DOWN", snake.getDirection());
     }
 
+    @Test
+    void testRotateRight() {
+        snake.rotateRight();
+        assertEquals("LEFT", snake.getDirection());
+        snake.rotateRight();
+        assertEquals("UP", snake.getDirection());
+        snake.rotateRight();
+        assertEquals("RIGHT", snake.getDirection());
+        snake.rotateRight();
+        assertEquals("DOWN", snake.getDirection());
+    }
+
+    @Test
+    void testRotateLeft() {
+        snake.rotateLeft();
+        assertEquals("RIGHT", snake.getDirection());
+        snake.rotateRight();
+        assertEquals("UP", snake.getDirection());
+        snake.rotateRight();
+        assertEquals("LEFT", snake.getDirection());
+        snake.rotateRight();
+        assertEquals("DOWN", snake.getDirection());
+    }
 }
