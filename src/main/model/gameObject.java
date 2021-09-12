@@ -1,11 +1,11 @@
 package model;
 
 public class gameObject {
-    protected int xCoor;
-    protected int minX = 0;
-    protected int maxX = 0;
+    protected int x_Coor;
+    protected int MIN_X = 0;
+    protected int MAX_X = 0;
 
-    protected int yCoor;
-    protected int minY = 0;
-    protected int maxY = 0;
+    protected int y_Coor;
+    protected int MIN_Y = 0;
+    protected int MAX_Y = 0;
 }
