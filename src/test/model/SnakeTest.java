@@ -18,14 +18,4 @@ class SnakeTest {
         assertEquals(1, snake.getLength());
     }
 
-    @Test
-    void testGrow() {
-        snake.grow();
-        assertEquals(2, snake.getLength());
-    }
-
-//    @Test
-//    void testShrink() {
-//    }
-
 }

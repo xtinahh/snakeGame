@@ -10,10 +10,15 @@ public class Snake {
     private String direction;
 
     // EFFECTS: creates a snake with a head with 0 body moving in the DOWN direction
-    public Snake() {
-        // TODO: assign head to snake while considering the position of head
+    public Snake(Section section) {
+        head = section;
         body = new ArrayList<Section>();
         direction = "DOWN";
+    }
+
+    // EFFECTS: returns head
+    public Section getHead() {
+        return head;
     }
 
     // EFFECTS: returns the length of snake (head and body)
@@ -27,19 +32,6 @@ public class Snake {
     }
 
     // MODIFIES: this
-    // EFFECTS: increases the length of tail by one
-    public void grow() {
-        body.add(new Section());
-    }
-
-    //    // MODIFIES: this
-//    // EFFECTS: reduces the length of the snake by one
-//    public void shrink() {
-//        // consider scenarios where there is only one length left
-//        length.remove(0);
-//    }
-
-    // MODIFIES: this
     // EFFECTS: rotates snake 90 degrees to the right
     public void rotateRight() {
         // TODO
@@ -51,12 +43,10 @@ public class Snake {
         // TODO
     }
 
-    // EFFECTS: produces true if snake crossed the boundary
-    public Boolean crossedBoundary() {
-        // TODO: consider scenarios where snake is moving along the boundary
-//        return ((x_Pos == MIN_X) || (x_Pos == MAX_X) ||
-//                (y_Pos == MIN_Y) || (y_Pos == MAX_Y));
-        return false;
+    // MODIFIES: this
+    // EFFECTS: snake moves one section in current direction and if food is consumed, body increases by one
+    public void move() {
+        // TODO: move head, add one section to body where head was, only remove last body if not growing
     }
 
 }
