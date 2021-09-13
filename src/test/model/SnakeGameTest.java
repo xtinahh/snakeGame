@@ -57,7 +57,22 @@ class SnakeGameTest {
     }
 
     @Test
-    void testGameOverOutOfBounds() {
+    void testGameOverOutOfBoundsRight() {
+
+    }
+
+    @Test
+    void testGameOverOutOfBoundsLeft() {
+
+    }
+
+    @Test
+    void testGameOverOutOfBoundsUp() {
+
+    }
+
+    @Test
+    void testGameOverOutOfBoundsDown() {
 
     }
 

@@ -2,8 +2,8 @@ package model;
 
 // Represents food with nutritional value and position in the stage
 public class Food {
-    private int MIN_NUT = 1;
-    private int MAX_NUT = 3;
+    public int MIN_NUT = 1;
+    public int MAX_NUT = 3;
 
     private int nutrition;
     private Section position;
