@@ -21,4 +21,14 @@ class SnakeGameTest {
         assertFalse(snake.contains(snakeGame.getFoodPosition()));
     }
 
+    @Test
+    void testGameOverCannibalism() {
+
+    }
+
+    @Test
+    void testGameOverOutOfBounds() {
+
+    }
+
 }

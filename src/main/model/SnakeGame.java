@@ -56,6 +56,18 @@ public class SnakeGame {
         snake.rotateLeft();
     }
 
+    // EFFECTS: produces true if game is over
+    public Boolean gameOver() {
+        return snake.cannibalism() || outOfBounds();
+    }
+
+    // EFFECTS: produces true if snake head is outside the game stage
+    private Boolean outOfBounds() {
+        Section position = snake.getHead();
+        return position.getColumn() < 0 || position.getColumn() > STAGE_COLS ||
+                position.getRow() < 0 || position.getRow() > STAGE_ROWS;
+    }
+
     // EFFECTS: returns food in a random location other than where the snake is
     private Food createFood() {
         Section randomSection = randomSection();
