@@ -20,17 +20,17 @@ public class SnakeGame {
         food = createFood();
     }
 
-    // EFFECTS: returns the head position of snake
+    // EFFECTS: returns head position of snake
     public Section getSnakeHead() {
         return snake.getHead();
     }
 
-    // EFFECTS: returns position of snake (head and body)
+    // EFFECTS: returns list of positions of snake (head and body)
     public List<Section> getSnakeBody() {
         return snake.getBody();
     }
 
-    // EFFECTS: returns head position of snake
+    // EFFECTS: returns head direction of snake
     public String getSnakeDirection() {
         return snake.getDirection();
     }

@@ -22,6 +22,7 @@ class SnakeGameTest {
     void testSnakeGameConstructor() {
         assertEquals(1, snakeGame.getSnakeLength());
         List<Section> snake = snakeGame.getSnakeBody();
+        assertEquals(0, snake.size());
         assertFalse(snake.contains(snakeGame.getFoodPosition()));
     }
 
