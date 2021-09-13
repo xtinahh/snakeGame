@@ -13,14 +13,15 @@ public class Snake {
     private Section head;
     private List<Section> body;
     private String direction;
+    private Boolean full;
 
 
-
-    // EFFECTS: creates a snake with a head with 0 body moving in the DOWN direction
+    // EFFECTS: creates a hungry snake with a head with 0 body moving in the DOWN direction
     public Snake(Section position) {
         head = position;
         body = new ArrayList<Section>();
         direction = DOWN;
+        full = false;
     }
 
     // EFFECTS: returns head
@@ -36,6 +37,16 @@ public class Snake {
     // EFFECTS: returns direction of snake
     public String getDirection() {
         return direction;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: changes snake hunger state from false to true and vice versa
+    public void changeHunger() {
+        if (full) {
+            full = false;
+        } else {
+            full = true;
+        }
     }
 
     // MODIFIES: this
@@ -77,9 +88,32 @@ public class Snake {
     }
 
     // MODIFIES: this
-    // EFFECTS: snake moves one section in current direction and if food is consumed, body increases by one
+    // EFFECTS: moves snake one section in current direction and if food is consumed, body increases by one
+    //          section
     public void move() {
-        // TODO: move head, add one section to body where head was, only remove last body if not growing
+        body.add(0, new Section(head.getColumn(), head.getRow()));
+        if (!full) {
+            body.remove(body.size() - 1);
+        }
+        moveHead();
     }
 
+    // MODIFIES: this
+    // EFFECTS: moves head one section in current direction
+    private void moveHead() {
+        switch (direction) {
+            case LEFT:
+                head = new Section(head.getColumn() - 1, head.getRow());
+                break;
+            case UP:
+                head = new Section(head.getColumn(), head.getRow() - 1);
+                break;
+            case RIGHT:
+                head = new Section(head.getColumn() + 1, head.getRow());
+                break;
+            case DOWN:
+                head = new Section(head.getColumn(), head.getRow() + 1);
+                break;
+        }
+    }
 }

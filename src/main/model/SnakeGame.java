@@ -8,6 +8,7 @@ public class SnakeGame {
     private Snake snake;
     private Food food;
 
+
     // EFFECTS: creates a new snake game with a snake in the middle of the stage and food in a random location
     public SnakeGame() {
         snake = new Snake(new Section(STAGE_COLS/2, STAGE_ROWS/2));
