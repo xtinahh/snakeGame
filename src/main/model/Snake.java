@@ -60,7 +60,20 @@ public class Snake {
     // MODIFIES: this
     // EFFECTS: rotates snake 90 degrees to the left
     public void rotateLeft() {
-        // TODO
+        switch(direction) {
+            case LEFT:
+                direction = DOWN;
+                break;
+            case UP:
+                direction = LEFT;
+                break;
+            case RIGHT:
+                direction = UP;
+                break;
+            case DOWN:
+                direction = RIGHT;
+                break;
+        }
     }
 
     // MODIFIES: this
