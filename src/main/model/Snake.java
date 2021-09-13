@@ -9,6 +9,7 @@ public class Snake {
     public static final String DOWN = "down";
     public static final String LEFT = "left";
     public static final String RIGHT = "right";
+    public static final String INITIAL_DIR = DOWN;
 
     private Section head;
     private List<Section> body;
@@ -16,11 +17,11 @@ public class Snake {
     private Boolean full;
 
 
-    // EFFECTS: creates a hungry snake with a head with 0 body moving in the DOWN direction
+    // EFFECTS: creates a hungry snake with a head with 0 body moving in INITIAL_DIR
     public Snake(Section position) {
         head = position;
         body = new ArrayList<Section>();
-        direction = DOWN;
+        direction = INITIAL_DIR;
         full = false;
     }
 
