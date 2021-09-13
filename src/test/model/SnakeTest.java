@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static model.Snake.*;
 import static model.SnakeGame.STAGE_COLS;
 import static model.SnakeGame.STAGE_ROWS;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SnakeTest {
     private Snake snake;
@@ -48,6 +48,27 @@ class SnakeTest {
     }
 
     @Test
+    void testCannibalismFalse() {
+        assertFalse(snake.cannibalism());
+    }
+
+    @Test
+    void testCannibalismTrue() {
+        snake.changeHunger();
+        snake.move();
+        snake.rotateRight();
+        snake.changeHunger();
+        snake.move();
+        snake.rotateRight();
+        snake.changeHunger();
+        snake.move();
+        snake.rotateRight();
+        snake.changeHunger();
+        snake.move();
+        assertTrue(snake.cannibalism());
+    }
+
+    @Test
     void testMoveNoFood() {
         snake.move();
         section = new Section(STAGE_COLS/2, STAGE_ROWS/2 + 1);
@@ -63,5 +84,4 @@ class SnakeTest {
         assertEquals(section, snake.getHead());
         assertEquals(2, snake.getLength());
     }
-
 }

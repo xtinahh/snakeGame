@@ -8,18 +8,6 @@ public class Section {
     private int column;
     private int row;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Section section = (Section) o;
-        return column == section.column && row == section.row;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(column, row);
-    }
 
     // EFFECTS: creates a section at the given position
     public Section(int col, int row) {
@@ -35,5 +23,18 @@ public class Section {
     // EFFECTS: returns row of this section
     public int getRow() {
         return row;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Section section = (Section) o;
+        return column == section.column && row == section.row;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(column, row);
     }
 }

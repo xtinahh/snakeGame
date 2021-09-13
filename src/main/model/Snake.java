@@ -49,6 +49,11 @@ public class Snake {
         }
     }
 
+    // EFFECTS: produces true if snake's head is in the same position in any section of the body
+    public Boolean cannibalism() {
+        return body.contains(head);
+    }
+
     // MODIFIES: this
     // EFFECTS: rotates snake 90 degrees to the right
     public void rotateRight() {
@@ -88,12 +93,14 @@ public class Snake {
     }
 
     // MODIFIES: this
-    // EFFECTS: moves snake one section in current direction and if food is consumed, body increases by one
-    //          section
+    // EFFECTS: moves snake one section in current direction and if full, body increases by one
+    //          section and snake is hungry again
     public void move() {
         body.add(0, new Section(head.getColumn(), head.getRow()));
         if (!full) {
             body.remove(body.size() - 1);
+        } else {
+            changeHunger();
         }
         moveHead();
     }
