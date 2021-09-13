@@ -107,7 +107,13 @@ class SnakeGameTest {
     @Test
     void testGameOverOutOfBoundsUp() {
         assertFalse(snakeGame.gameOver());
-        // TODO
+        snakeGame.setSnakeDirection(UP);
+        int distanceUntilCrash = snakeGame.getSnakeHead().getRow();
+        for(int i = 0; i < distanceUntilCrash; i++) {
+            snakeGame.run();
+        }
+        assertFalse(snakeGame.gameOver());
+        snakeGame.run();
         assertTrue(snakeGame.gameOver());
     }
 
