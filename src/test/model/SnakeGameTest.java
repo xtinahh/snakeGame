@@ -39,10 +39,13 @@ class SnakeGameTest {
         Section originalPos = new Section(STAGE_COLS - 2, STAGE_ROWS - 5);
         snakeGame.setFoodPosition(originalPos);
         snakeGame.run();
+        assertFalse(snakeGame.canEat());
         assertEquals(originalPos, snakeGame.getFoodPosition());
         snakeGame.run();
+        assertFalse(snakeGame.canEat());
         assertEquals(originalPos, snakeGame.getFoodPosition());
         snakeGame.run();
+        assertFalse(snakeGame.canEat());
         assertEquals(originalPos, snakeGame.getFoodPosition());
     }
 
@@ -55,8 +58,10 @@ class SnakeGameTest {
         assertEquals(originalPos, snakeGame.getFoodPosition());
         snakeGame.run();
         assertEquals(originalPos, snakeGame.getFoodPosition());
+        assertTrue(snakeGame.canEat());
         snakeGame.run();
         assertFalse(originalPos.equals(snakeGame.getFoodPosition()));
+        assertFalse(snakeGame.canEat());
         assertEquals(2, snakeGame.getSnakeLength());
     }
 
@@ -66,6 +71,8 @@ class SnakeGameTest {
         snakeGame.setSnakeDirection(DOWN);
         snakeGame.changeSnakeHunger();
         snakeGame.run();
+        snakeGame.rotateSnakeLeft();
+        snakeGame.rotateSnakeRight();
         snakeGame.rotateSnakeRight();
         snakeGame.changeSnakeHunger();
         snakeGame.run();
