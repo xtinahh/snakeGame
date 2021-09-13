@@ -1,5 +1,6 @@
 package model;
 
+import java.util.List;
 import java.util.Random;
 
 // Represents a snake game with its stage size STAGE_COLS * STAGE_ROWS
@@ -7,6 +8,7 @@ public class SnakeGame {
     public static final int STAGE_COLS = 12;
     public static final int STAGE_ROWS = 12;
 
+    Random randomNumb = new Random();
     private Snake snake;
     private Food food;
 
@@ -19,9 +21,20 @@ public class SnakeGame {
 
     // EFFECTS: returns food in a random location other than where the snake is
     public Food createFood() {
-        Random randomNumb = new Random();
-        Section randomSection = new Section (randomNumb.nextInt(STAGE_COLS), randomNumb.nextInt(STAGE_ROWS));
+        Section randomSection = randomSection();
+        List<Section> wholeSnake = snake.getPosition();
+
+        while (wholeSnake.contains(randomSection)){
+            randomSection = randomSection();
+        }
+
         return new Food(randomSection);
     }
 
+    // Code to generate random int references https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
+    // EFFECTS: returns a section in a random location
+    private Section randomSection() {
+        Section randomSection = new Section (randomNumb.nextInt(STAGE_COLS), randomNumb.nextInt(STAGE_ROWS));
+        return randomSection;
+    }
 }

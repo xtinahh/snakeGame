@@ -29,6 +29,18 @@ public class Snake {
         return head;
     }
 
+    // EFFECTS: returns body
+    public List<Section> getBody() {
+        return body;
+    }
+
+    // EFFECTS: returns all sections of snake (head and body)
+    public List<Section> getPosition() {
+        List<Section> wholeSnake = body;
+        wholeSnake.add(0, head);
+        return wholeSnake;
+    }
+
     // EFFECTS: returns the length of snake (head and body)
     public int getLength() {
         return 1 + body.size();
