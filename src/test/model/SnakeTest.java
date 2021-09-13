@@ -52,36 +52,43 @@ class SnakeTest {
         assertFalse(snake.cannibalism());
     }
 
-    @Test
-    void testCannibalismTrue() {
-        snake.changeHunger();
-        snake.move();
-        snake.rotateRight();
-        snake.changeHunger();
-        snake.move();
-        snake.rotateRight();
-        snake.changeHunger();
-        snake.move();
-        snake.rotateRight();
-        snake.changeHunger();
-        snake.move();
-        assertTrue(snake.cannibalism());
-    }
+//    @Test
+//    void testCannibalismTrue() {
+//        snake.changeHunger();
+//        snake.move();
+//        snake.rotateRight();
+//        snake.changeHunger();
+//        snake.move();
+//        snake.rotateRight();
+//        snake.changeHunger();
+//        snake.move();
+//        snake.rotateRight();
+//        snake.changeHunger();
+//        snake.move();
+//        assertTrue(snake.cannibalism());
+//    }
 
-    @Test
-    void testMoveNoFood() {
-        snake.move();
-        section = new Section(STAGE_COLS/2, STAGE_ROWS/2 + 1);
-        assertEquals(section, snake.getHead());
-        assertEquals(1, snake.getLength());
-    }
+//    @Test
+//    void testMoveNoFood() {
+//        snake.move();
+//        section = new Section(STAGE_COLS/2, STAGE_ROWS/2 + 1);
+//        assertEquals(section, snake.getHead());
+//        assertEquals(1, snake.getLength());
+//        snake.move();
+//        assertEquals(1, snake.getLength());
+//    }
 
-    @Test
-    void testMoveFood() {
-        snake.changeHunger();
-        snake.move();
-        section = new Section(STAGE_COLS/2, STAGE_ROWS/2 + 1);
-        assertEquals(section, snake.getHead());
-        assertEquals(2, snake.getLength());
-    }
+//    @Test
+//    void testMoveFood() {
+//        snake.changeHunger();
+//        snake.move();
+//        section = new Section(STAGE_COLS/2, STAGE_ROWS/2 + 1);
+//        assertEquals(section, snake.getHead());
+//        assertEquals(2, snake.getLength());
+//        snake.move();
+//        assertEquals(2, snake.getLength());
+//        snake.changeHunger();
+//        snake.move();
+//        assertEquals(3, snake.getLength());
+//    }
 }

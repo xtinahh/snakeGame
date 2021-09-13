@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static model.SnakeGame.STAGE_COLS;
+import static model.SnakeGame.STAGE_ROWS;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class SnakeGameTest {
@@ -17,8 +20,35 @@ class SnakeGameTest {
 
     @Test
     void testSnakeGameConstructor() {
-        List<Section> snake = snakeGame.getSnakePosition();
+        assertEquals(1, snakeGame.getSnakeLength());
+        List<Section> snake = snakeGame.getSnakeBody();
         assertFalse(snake.contains(snakeGame.getFoodPosition()));
+    }
+
+    @Test
+    void testRunCannotEat() {
+        Section originalPos = new Section(STAGE_COLS - 2, STAGE_ROWS - 5);
+        snakeGame.setFoodPosition(originalPos);
+        snakeGame.run();
+        assertEquals(originalPos, snakeGame.getFoodPosition());
+        snakeGame.run();
+        assertEquals(originalPos, snakeGame.getFoodPosition());
+        snakeGame.run();
+        assertEquals(originalPos, snakeGame.getFoodPosition());
+    }
+
+    @Test
+    void testRunCanEat() {
+        Section originalPos = new Section(STAGE_COLS / 2, STAGE_ROWS / 2 + 2);
+        snakeGame.setFoodPosition(originalPos);
+        assertEquals(1, snakeGame.getSnakeLength());
+        snakeGame.run();
+        assertEquals(originalPos, snakeGame.getFoodPosition());
+        snakeGame.run();
+        assertEquals(originalPos, snakeGame.getFoodPosition());
+        snakeGame.run();
+        assertFalse(originalPos.equals(snakeGame.getFoodPosition()));
+        assertEquals(2, snakeGame.getSnakeLength());
     }
 
     @Test

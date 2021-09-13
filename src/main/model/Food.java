@@ -11,13 +11,13 @@ public class Food {
 
     // EFFECTS: creates a new food with default expiry, random nutrition, and random x and y coordinates
     public Food(Section position) {
-        nutrition = getRandomNut();
+        nutrition = getRandomNutrition();
         this.position = position;
     }
 
     // Code to generate random int references https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
     // EFFECTS: helper method to get a random value for nutrition
-    private int getRandomNut() {
+    private int getRandomNutrition() {
         int rangeNut = (MAX_NUT - MIN_NUT + 1);
         return (int)Math.floor(Math.random() * rangeNut + MIN_NUT);
     }

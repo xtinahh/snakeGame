@@ -34,13 +34,6 @@ public class Snake {
         return body;
     }
 
-    // EFFECTS: returns all sections of snake (head and body)
-    public List<Section> getPosition() {
-        List<Section> wholeSnake = body;
-        wholeSnake.add(0, head);
-        return wholeSnake;
-    }
-
     // EFFECTS: returns the length of snake (head and body)
     public int getLength() {
         return 1 + body.size();
@@ -64,6 +57,13 @@ public class Snake {
     // EFFECTS: produces true if snake's head is in the same position in any section of the body
     public Boolean cannibalism() {
         return body.contains(head);
+    }
+
+    // REQUIRES: direction is one of UP, DOWN, LEFT, RIGHT
+    // MODIFIES: this
+    // EFFECTS: changes direction of snake to given direction
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 
     // MODIFIES: this
