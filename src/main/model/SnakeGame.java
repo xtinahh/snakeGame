@@ -64,6 +64,12 @@ public class SnakeGame {
         snake.setDirection(direction);
     }
 
+    // MODIFIES: this
+    // EFFECTS: changes snake hunger from full to hungry and vice versa
+    public void changeSnakeHunger() {
+        snake.changeHunger();
+    }
+
     // REQUIRES: !gameOver()
     // MODIFIES: this
     // EFFECTS: move snake and if snake can eat food, eats it and new food is created at a random position

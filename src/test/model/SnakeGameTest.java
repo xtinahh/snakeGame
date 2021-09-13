@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static model.SnakeGame.STAGE_COLS;
-import static model.SnakeGame.STAGE_ROWS;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static model.Snake.DOWN;
+import static model.Snake.INITIAL_DIR;
+import static model.SnakeGame.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SnakeGameTest {
     SnakeGame snakeGame;
@@ -19,11 +19,20 @@ class SnakeGameTest {
     }
 
     @Test
-    void testSnakeGameConstructor() {
+    void testSnakeGameConstructorSnake() {
+        assertEquals(INITIAL, snakeGame.getSnakeHead());
         assertEquals(1, snakeGame.getSnakeLength());
-        List<Section> snake = snakeGame.getSnakeBody();
-        assertEquals(0, snake.size());
-        assertFalse(snake.contains(snakeGame.getFoodPosition()));
+        assertEquals(0, snakeGame.getSnakeBody().size());
+        assertEquals(INITIAL_DIR, snakeGame.getSnakeDirection());
+    }
+
+    @Test
+    void testSnakeGameConstructorFood() {
+        for (int i = 0; i > 100; i++) {
+            List<Section> snake = snakeGame.getSnakeBody();
+            assertFalse(snake.contains(snakeGame.getFoodPosition()));
+            assertFalse(snakeGame.getSnakeHead().equals(snakeGame.getFoodPosition()));
+        }
     }
 
     @Test
@@ -54,7 +63,20 @@ class SnakeGameTest {
 
     @Test
     void testGameOverCannibalism() {
-
+        assertFalse(snakeGame.gameOver());
+        snakeGame.setSnakeDirection(DOWN);
+        snakeGame.changeSnakeHunger();
+        snakeGame.run();
+        snakeGame.rotateSnakeRight();
+        snakeGame.changeSnakeHunger();
+        snakeGame.run();
+        snakeGame.rotateSnakeRight();
+        snakeGame.changeSnakeHunger();
+        snakeGame.run();
+        snakeGame.rotateSnakeRight();
+        snakeGame.changeSnakeHunger();
+        snakeGame.run();
+        assertTrue(snakeGame.gameOver());
     }
 
     @Test
