@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static model.Snake.DOWN;
-import static model.Snake.INITIAL_DIR;
+import static model.Snake.*;
 import static model.SnakeGame.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -81,22 +80,36 @@ class SnakeGameTest {
 
     @Test
     void testGameOverOutOfBoundsRight() {
-
+        assertFalse(snakeGame.gameOver());
+        snakeGame.setSnakeDirection(RIGHT);
+        int distanceUntilCrash = STAGE_COLS - snakeGame.getSnakeHead().getColumn();
+        for(int i = 0; i < distanceUntilCrash - 1; i++) {
+            snakeGame.run();
+        }
+        assertFalse(snakeGame.gameOver());
+        snakeGame.run();
+        assertTrue(snakeGame.gameOver());
     }
 
     @Test
     void testGameOverOutOfBoundsLeft() {
-
+        assertFalse(snakeGame.gameOver());
+        // TODO
+        assertTrue(snakeGame.gameOver());
     }
 
     @Test
     void testGameOverOutOfBoundsUp() {
-
+        assertFalse(snakeGame.gameOver());
+        // TODO
+        assertTrue(snakeGame.gameOver());
     }
 
     @Test
     void testGameOverOutOfBoundsDown() {
-
+        assertFalse(snakeGame.gameOver());
+        // TODO
+        assertTrue(snakeGame.gameOver());
     }
 
 }

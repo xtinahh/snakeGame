@@ -108,8 +108,8 @@ public class SnakeGame {
     // EFFECTS: produces true if snake head is outside the game stage
     private Boolean outOfBounds() {
         Section position = snake.getHead();
-        return position.getColumn() < 0 || position.getColumn() > STAGE_COLS ||
-                position.getRow() < 0 || position.getRow() > STAGE_ROWS;
+        return position.getColumn() < 0 || position.getColumn() >= STAGE_COLS ||
+                position.getRow() < 0 || position.getRow() >= STAGE_ROWS;
     }
 
     // EFFECTS: returns food in a random location other than where the snake is
