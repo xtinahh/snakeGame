@@ -19,8 +19,28 @@ public class SnakeGame {
         food = createFood();
     }
 
+    // EFFECTS: returns the head position of snake
+    public Section getSnakeHead() {
+        return snake.getHead();
+    }
+
+    // EFFECTS: returns head position of snake
+    public String getSnakeDirection() {
+        return snake.getDirection();
+    }
+
+    // EFFECTS: returns food position
+    public Section getFoodPosition() {
+        return food.getPosition();
+    }
+
+    // EFFECTS: returns food nutrition
+    public int getFoodNutrition() {
+        return food.getNutrition();
+    }
+
     // EFFECTS: returns food in a random location other than where the snake is
-    public Food createFood() {
+    private Food createFood() {
         Section randomSection = randomSection();
         List<Section> wholeSnake = snake.getPosition();
 
