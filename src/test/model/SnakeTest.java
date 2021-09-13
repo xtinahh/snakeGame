@@ -3,6 +3,7 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static model.Snake.*;
 import static model.SnakeGame.STAGE_COLS;
 import static model.SnakeGame.STAGE_ROWS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,30 +19,30 @@ class SnakeTest {
     @Test
     void testSnakeConstructor() {
         assertEquals(1, snake.getLength());
-        assertEquals("DOWN", snake.getDirection());
+        assertEquals(DOWN, snake.getDirection());
     }
 
     @Test
     void testRotateRight() {
         snake.rotateRight();
-        assertEquals("LEFT", snake.getDirection());
+        assertEquals(LEFT, snake.getDirection());
         snake.rotateRight();
-        assertEquals("UP", snake.getDirection());
+        assertEquals(UP, snake.getDirection());
         snake.rotateRight();
-        assertEquals("RIGHT", snake.getDirection());
+        assertEquals(RIGHT, snake.getDirection());
         snake.rotateRight();
-        assertEquals("DOWN", snake.getDirection());
+        assertEquals(DOWN, snake.getDirection());
     }
 
     @Test
     void testRotateLeft() {
         snake.rotateLeft();
-        assertEquals("RIGHT", snake.getDirection());
+        assertEquals(RIGHT, snake.getDirection());
         snake.rotateRight();
-        assertEquals("UP", snake.getDirection());
+        assertEquals(UP, snake.getDirection());
         snake.rotateRight();
-        assertEquals("LEFT", snake.getDirection());
+        assertEquals(LEFT, snake.getDirection());
         snake.rotateRight();
-        assertEquals("DOWN", snake.getDirection());
+        assertEquals(DOWN, snake.getDirection());
     }
 }

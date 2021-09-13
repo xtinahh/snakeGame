@@ -5,15 +5,22 @@ import java.util.List;
 
 // Represent a snake with its length increasing as it consumes food
 public class Snake {
+    public static final String UP = "up";
+    public static final String DOWN = "down";
+    public static final String LEFT = "left";
+    public static final String RIGHT = "right";
+
     private Section head;
     private List<Section> body;
     private String direction;
+
+
 
     // EFFECTS: creates a snake with a head with 0 body moving in the DOWN direction
     public Snake(Section position) {
         head = position;
         body = new ArrayList<Section>();
-        direction = "DOWN";
+        direction = DOWN;
     }
 
     // EFFECTS: returns head
@@ -34,7 +41,20 @@ public class Snake {
     // MODIFIES: this
     // EFFECTS: rotates snake 90 degrees to the right
     public void rotateRight() {
-        // TODO
+        switch(direction) {
+            case LEFT:
+                direction = UP;
+                break;
+            case UP:
+                direction = RIGHT;
+                break;
+            case RIGHT:
+                direction = DOWN;
+                break;
+            case DOWN:
+                direction = LEFT;
+                break;
+        }
     }
 
     // MODIFIES: this
