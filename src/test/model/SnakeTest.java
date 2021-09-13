@@ -39,11 +39,11 @@ class SnakeTest {
     void testRotateLeft() {
         snake.rotateLeft();
         assertEquals(RIGHT, snake.getDirection());
-        snake.rotateRight();
+        snake.rotateLeft();
         assertEquals(UP, snake.getDirection());
-        snake.rotateRight();
+        snake.rotateLeft();
         assertEquals(LEFT, snake.getDirection());
-        snake.rotateRight();
+        snake.rotateLeft();
         assertEquals(DOWN, snake.getDirection());
     }
 
