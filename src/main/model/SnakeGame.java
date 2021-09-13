@@ -24,6 +24,11 @@ public class SnakeGame {
         return snake.getHead();
     }
 
+    // EFFECTS: returns position of snake (head and body)
+    public List<Section> getSnakePosition() {
+        return snake.getPosition();
+    }
+
     // EFFECTS: returns head position of snake
     public String getSnakeDirection() {
         return snake.getDirection();
@@ -37,6 +42,18 @@ public class SnakeGame {
     // EFFECTS: returns food nutrition
     public int getFoodNutrition() {
         return food.getNutrition();
+    }
+
+    // MODIFIES: this
+    // EFFECTS: rotates snake 90 degrees to the right
+    public void rotateSnakeRight() {
+        snake.rotateRight();
+    }
+
+    // MODIFIES: this
+    // EFFECTS: rotates snake 90 degrees to the left
+    public void rotateSnakeLeft() {
+        snake.rotateLeft();
     }
 
     // EFFECTS: returns food in a random location other than where the snake is
